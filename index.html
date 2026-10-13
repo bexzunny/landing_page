@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Git / Taller "El código también se encuentra" </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="style.css" rel="stylesheet"><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-retroCream text-retroDark antialiased selection:bg-retroTerracotta selection:text-white">
+
+    <!-- Navbar Fijo Superior -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-retroCream/90 backdrop-blur-md border-b border-retroDark/10">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#inicio" class="flex items-center gap-2 font-heading font-bold text-lg tracking-wider text-retroTerracotta">
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/>
+                </svg>
+                <span>GIT / TALLER</span>
+            </a>
+
+            <!-- Menú Desktop -->
+            <nav class="hidden md:flex items-center gap-8 font-heading text-sm font-medium tracking-wide">
+                <a href="#inicio" class="hover:text-retroTerracotta transition-colors">INICIO</a>
+                <a href="#acerca" class="hover:text-retroTerracotta transition-colors">ACERCA DE</a>
+                <a href="#servicios" class="hover:text-retroTerracotta transition-colors">SERVICIOS</a>
+                <a href="#contacto" class="bg-retroDark text-retroCream px-5 py-2.5 rounded-none hover:bg-retroTerracotta transition-colors">HABLEMOS</a>
+            </nav>
+
+            <!-- Botón Menú Móvil -->
+            <button id="menu-btn" class="md:hidden text-retroDark p-2 focus:outline-none">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Menú Desplegable Móvil -->
+        <div id="mobile-menu" class="hidden md:hidden bg-retroCream border-b border-retroDark/10 px-6 py-4 space-y-3 font-heading text-sm">
+            <a href="#inicio" class="block py-2 hover:text-retroTerracotta">INICIO</a>
+            <a href="#acerca" class="block py-2 hover:text-retroTerracotta">ACERCA DE</a>
+            <a href="#servicios" class="block py-2 hover:text-retroTerracotta">SERVICIOS</a>
+            <a href="#contacto" class="block py-2 text-retroTerracotta font-bold">HABLEMOS</a>
+        </div>
+    </header>
+
+    <!-- Sección Portada (Hero) -->
+    <section id="inicio" class="pt-32 pb-20 md:pt-40 md:pb-32 px-6 border-b border-retroDark/10">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <!-- Textos Hero -->
+            <div class="lg:col-span-7 space-y-6">
+                <span class="text-xs font-heading font-bold uppercase tracking-widest text-retroDark/60 border-l-2 border-retroTerracotta pl-3">
+                    Manual para crear en compañía · Vol. 01
+                </span>
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-heading font-bold uppercase leading-none tracking-tight">
+                    El código <span class="text-retroTerracotta">también</span> se encuentra.
+                </h1>
+                <p class="text-lg md:text-xl text-retroDark/80 font-sans max-w-xl">
+                    Git guarda cada paso, abre caminos nuevos y ayuda a que las buenas ideas lleguen más lejos.
+                </p>
+                <div class="flex flex-wrap items-center gap-4 pt-4">
+                    <a href="#servicios" class="bg-retroDark text-retroCream hover:bg-retroTerracotta px-6.5 py-4 font-heading text-sm tracking-wider uppercase transition-colors flex items-center gap-2">
+                        Explora Git
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    </a>
+                    <a href="#acerca" class="border border-retroDark/30 hover:border-retroDark px-6.5 py-4 font-heading text-sm tracking-wider uppercase transition-colors">
+                        Conoce más
+                    </a>
+                </div>
+                <div class="pt-6 flex items-center gap-2 text-xs font-heading tracking-widest text-retroDark/60">
+                    <svg class="w-4 h-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+                    Sigue el hilo
+                </div>
+            </div>
+
+            <!-- Gráfico ilustrativo de ramas -->
+            <div class="lg:col-span-5 flex justify-center">
+                <div class="relative w-full max-w-md bg-retroGreen p-6 rounded-2xl shadow-xl text-retroCream border-2 border-retroDark/20">
+                    <div class="absolute -top-4 -right-4 bg-retroMustard text-retroDark font-heading text-xs font-bold px-3 py-2 rounded-full rotate-12 shadow-md">
+                        BUENAS IDEAS EN RAMA
+                    </div>
+                    <div class="flex justify-between items-center text-xs font-heading tracking-wider mb-6 opacity-80">
+                        <span>EL ÁRBOL DE POSIBILIDADES</span>
+                        <span>01 / GIT</span>
+                    </div>
+                    <!-- SVG de Ramas Estilizadas -->
+                    <svg viewBox="0 0 300 200" class="w-full h-auto drop-shadow-sm">
+                        <path d="M 30 150 Q 100 150, 150 100 T 270 50" fill="none" stroke="#e6a13b" stroke-width="4" stroke-linecap="round"/>
+                        <path d="M 150 100 Q 200 100, 270 140" fill="none" stroke="#d95338" stroke-width="4" stroke-dasharray="6,6" stroke-linecap="round"/>
+                        <circle cx="30" cy="150" r="6" fill="#f3efe6"/>
+                        <circle cx="110" cy="125" r="6" fill="#e6a13b"/>
+                        <circle cx="150" cy="100" r="8" fill="#f3efe6"/>
+                        <circle cx="210" cy="80" r="6" fill="#e6a13b"/>
+                        <circle cx="270" cy="50" r="8" fill="#d95338"/>
+                        <circle cx="270" cy="140" r="7" fill="#d95338"/>
+                        <text x="45" y="145" fill="#f3efe6" font-size="10" font-family="Space Grotesk">main</text>
+                        <text x="155" y="90" fill="#f3efe6" font-size="10" font-family="Space Grotesk">feature</text>
+                    </svg>
+                    <div class="mt-4 pt-4 border-t border-retroCream/20 flex justify-between items-center text-[11px] font-heading tracking-wider opacity-90">
+                        <span>CAMBIOS CON MEMORIA</span>
+                        <span>RAMA</span>
+                        <span>PRUEBA</span>
+                        <span>COMPARTE</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Acerca de -->
+    <section id="acerca" class="py-24 md:py-32 bg-retroMustard text-retroDark border-b border-retroDark/10 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5 space-y-4">
+                    <span class="text-xs font-heading font-bold uppercase tracking-widest opacity-80">
+                        01 / Acerca de
+                    </span>
+                    <h2 class="text-4xl sm:text-5xl font-heading font-bold uppercase leading-tight">
+                        Un lugar para que el trabajo avance.
+                    </h2>
+                </div>
+                <div class="lg:col-span-7 space-y-6 lg:border-l lg:border-retroDark/20 lg:pl-12">
+                    <p class="text-lg md:text-xl font-sans leading-relaxed">
+                        Git es un sistema de control de versiones distribuido. En sencillo: un registro compartido que te deja experimentar sin perder lo que ya funciona.
+                    </p>
+                    <p class="text-base font-sans opacity-90 leading-relaxed">
+                        Nació para el software. Hoy mueve ideas de todo tipo, permitiendo que equipos multidisciplinarios colaboren sin pisarse el trabajo y recuperen cualquier instante del pasado con precisión quirúrgica.
+                    </p>
+                    <div class="pt-4 flex items-center justify-between border-t border-retroDark/20 text-xs font-heading tracking-widest uppercase">
+                        <span>Una historia que puedes recorrer</span>
+                        <span>Registra · Comparte · Continúa</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Productos y Servicios / Lo que puedes hacer -->
+    <section id="servicios" class="py-24 md:py-32 px-6 border-b border-retroDark/10">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+                <div>
+                    <span class="text-xs font-heading font-bold uppercase tracking-widest text-retroTerracotta">
+                        02 / Lo que puedes hacer
+                    </span>
+                    <h2 class="text-4xl sm:text-6xl font-heading font-bold uppercase mt-2">
+                        Herramientas para avanzar.
+                    </h2>
+                </div>
+                <p class="text-retroDark/70 text-sm font-heading italic mt-4 md:mt-0 max-w-xs">
+                    Pequeños comandos. Grandes conversaciones entre personas y proyectos.
+                </p>
+            </div>
+
+            <!-- Tarjetas de Servicios -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Tarjeta 1 -->
+                <div class="bg-retroCream border-2 border-retroDark/20 p-8 flex flex-col justify-between hover:border-retroTerracotta transition-all shadow-sm rounded-xl">
+                    <div>
+                        <div class="flex justify-between items-center mb-6 text-xs font-heading font-bold text-retroTerracotta">
+                            <span>01 /</span>
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        </div>
+                        <h3 class="text-2xl font-heading font-bold uppercase mb-4">Control de versiones</h3>
+                        <p class="text-retroDark/80 text-sm leading-relaxed mb-6">
+                            Cada cambio tiene contexto. Guarda el recorrido de tu código y vuelve a cualquier punto con confianza y sin miedo a romper nada.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-retroDark/10">
+                        <span class="inline-block border border-retroDark/30 px-3 py-1 font-heading text-xs uppercase tracking-wider">Historial claro</span>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 2 -->
+                <div class="bg-retroCream border-2 border-retroDark/20 p-8 flex flex-col justify-between hover:border-retroTerracotta transition-all shadow-sm rounded-xl">
+                    <div>
+                        <div class="flex justify-between items-center mb-6 text-xs font-heading font-bold text-retroTerracotta">
+                            <span>02 /</span>
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                        </div>
+                        <h3 class="text-2xl font-heading font-bold uppercase mb-4">Trabajo en equipo</h3>
+                        <p class="text-retroDark/80 text-sm leading-relaxed mb-6">
+                            Ramas independientes para explorar, revisiones para conversar y fusiones que mantienen a todo el equipo en perfecta sintonía.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-retroDark/10">
+                        <span class="inline-block border border-retroDark/30 px-3 py-1 font-heading text-xs uppercase tracking-wider">Colaboración real</span>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 3 -->
+                <div class="bg-retroCream border-2 border-retroDark/20 p-8 flex flex-col justify-between hover:border-retroTerracotta transition-all shadow-sm rounded-xl">
+                    <div>
+                        <div class="flex justify-between items-center mb-6 text-xs font-heading font-bold text-retroTerracotta">
+                            <span>03 /</span>
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+                        </div>
+                        <h3 class="text-2xl font-heading font-bold uppercase mb-4">Código abierto</h3>
+                        <p class="text-retroDark/80 text-sm leading-relaxed mb-6">
+                            Comparte tu trabajo, descubre proyectos fascinantes y construye sobre las ideas de una comunidad global sin fronteras.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-retroDark/10">
+                        <span class="inline-block border border-retroDark/30 px-3 py-1 font-heading text-xs uppercase tracking-wider">Hecho en comunidad</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Banner CTA interno -->
+            <div class="mt-12 bg-retroTerracotta text-retroCream p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6 rounded-xl shadow-lg">
+                <div>
+                    <span class="text-xs font-heading uppercase tracking-widest opacity-80">¿Listo para probarlo?</span>
+                    <h3 class="text-2xl md:text-3xl font-heading font-bold uppercase mt-1">Tu próximo cambio empieza con una línea.</h3>
+                </div>
+                <a href="https://git-scm.com" target="_blank" rel="noopener noreferrer" class="bg-retroDark text-retroCream hover:bg-retroCream hover:text-retroDark px-6.5 py-4 font-heading text-sm tracking-wider uppercase transition-colors whitespace-nowrap">
+                    Visita git-scm.com &rarr;
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Contacto -->
+    <section id="contacto" class="py-24 md:py-32 bg-retroGreen text-retroCream px-6 relative">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            <!-- Columna Izquierda: Textos y Mapa -->
+            <div class="lg:col-span-6 space-y-8">
+                <div>
+                    <span class="text-xs font-heading font-bold uppercase tracking-widest opacity-70">
+                        03 / Contacto
+                    </span>
+                    <h2 class="text-4xl sm:text-6xl font-heading font-bold uppercase mt-2 leading-none">
+                        Hagamos un <span class="text-retroMustard">commit.</span>
+                    </h2>
+                    <p class="text-retroCream/80 font-sans mt-4 max-w-md">
+                        ¿Tienes una pregunta, una idea o ganas de colaborar? Aquí empieza la conversación.
+                    </p>
+                </div>
+
+                <!-- Tarjeta / Mapa Estilizado Integrado -->
+                <div class="bg-retroCream text-retroDark p-6 rounded-2xl shadow-xl relative overflow-hidden border-2 border-retroCream/20">
+                    <div class="flex justify-between items-center mb-4 text-xs font-heading tracking-wider text-retroDark/60">
+                        <span>UBICACIÓN GLOBAL</span>
+                        <span class="text-retroTerracotta font-bold">● ACTIVO</span>
+                    </div>
+                    <!-- Mapa Embebido de Google Maps / Interactivo -->
+                    <div class="w-full h-64 rounded-xl overflow-hidden border border-retroDark/10 relative">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.6713998748366!2d-99.16869352499256!3d19.427020681851945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff35f5bd1563%3A0x6c366f0e2de02ff7!2sAv.%20Paseo%20de%20la%20Reforma%2C%20Ju%C3%A1rez%2C%20Ciudad%20de%20M%C3%xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1700000000000!5m2!1ses-419!2smx" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Mapa de ubicación Git Taller">
+                        ></iframe>
+                    </div>
+                    <div class="mt-4 flex items-center gap-2 text-xs font-heading text-retroDark/70">
+                        <svg class="w-4 h-4 text-retroTerracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                        <span>Siempre cerca, desde cualquier lugar del mundo.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Columna Derecha: Formulario con Validaciones -->
+            <div class="lg:col-span-6 bg-retroCream text-retroDark p-8 md:p-10 rounded-2xl shadow-xl relative">
+                <!-- Alerta de éxito flotante dentro del form -->
+                <div id="success-alert" class="hidden mb-6 p-4 bg-retroGreen text-retroCream rounded-xl text-sm font-heading flex items-center justify-between">
+                    <span>¡Commit exitoso! Mensaje enviado correctamente. Nos pondremos en contacto pronto.</span>
+                    <button type="button" onclick="document.getElementById('success-alert').classList.add('hidden')" class="font-bold ml-2">✕</button>
+                </div>
+
+                <form id="contact-form" class="space-y-6" novalidate>
+                    <div>
+                        <label for="nombre" class="block text-xs font-heading font-bold uppercase tracking-wider mb-2 text-retroDark/70">Tu Nombre</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="¿Cómo te llamas?" 
+                            class="w-full bg-retroCream border-b-2 border-retroDark/30 px-0 py-3 text-retroDark placeholder-retroDark/40 focus:outline-none focus:border-retroTerracotta font-sans transition-colors">
+                        <p id="error-nombre" class="text-retroTerracotta text-xs mt-1 hidden font-heading">Por favor ingresa tu nombre.</p>
+                    </div>
+
+                    <div>
+                        <label for="correo" class="block text-xs font-heading font-bold uppercase tracking-wider mb-2 text-retroDark/70">Correo Electrónico</label>
+                        <input type="email" id="correo" name="correo" placeholder="hola@ejemplo.com" 
+                            class="w-full bg-retroCream border-b-2 border-retroDark/30 px-0 py-3 text-retroDark placeholder-retroDark/40 focus:outline-none focus:border-retroTerracotta font-sans transition-colors">
+                        <p id="error-correo" class="text-retroTerracotta text-xs mt-1 hidden font-heading">Por favor ingresa un correo electrónico válido.</p>
+                    </div>
+
+                    <div>
+                        <label for="mensaje" class="block text-xs font-heading font-bold uppercase tracking-wider mb-2 text-retroDark/70">Cuéntanos</label>
+                        <textarea id="mensaje" name="mensaje" rows="4" placeholder="¿Qué te gustaría construir?" 
+                            class="w-full bg-retroCream border-b-2 border-retroDark/30 px-0 py-3 text-retroDark placeholder-retroDark/40 focus:outline-none focus:border-retroTerracotta font-sans resize-none transition-colors"></textarea>
+                        <p id="error-mensaje" class="text-retroTerracotta text-xs mt-1 hidden font-heading">Por favor escribe un mensaje (mínimo 10 caracteres).</p>
+                    </div>
+
+                    <button type="submit" class="w-full bg-retroMustard hover:bg-retroTerracotta hover:text-retroCream text-retroDark font-heading font-bold text-sm tracking-widest uppercase py-4 transition-colors flex items-center justify-center gap-2 rounded-lg shadow-md">
+                        <span>Enviar Mensaje</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-retroDark text-retroCream py-8 px-6 text-xs font-heading tracking-widest uppercase border-t border-retroCream/10">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div>Git / Taller · Aprender Juntos</div>
+            <div>Hecho para seguir el hilo ⚡</div>
+        </div>
+    </footer>
+
+    <!-- JavaScript para Interactividad y Validaciones -->
+    <script>
+        // Toggle Menú Móvil
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Cerrar menú móvil al hacer click en un enlace
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Validación del Formulario de Contacto en JavaScript
+        const contactForm = document.getElementById('contact-form');
+        const successAlert = document.getElementById('success-alert');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const nombreInput = document.getElementById('nombre');
+            const correoInput = document.getElementById('correo');
+            const mensajeInput = document.getElementById('mensaje');
+
+            const errorNombre = document.getElementById('error-nombre');
+            const errorCorreo = document.getElementById('error-correo');
+            const errorMensaje = document.getElementById('error-mensaje');
+
+            let isValid = true;
+
+            // Validar Nombre
+            if (nombreInput.value.trim() === '') {
+                errorNombre.classList.remove('hidden');
+                nombreInput.classList.add('border-retroTerracotta');
+                isValid = false;
+            } else {
+                errorNombre.classList.add('hidden');
+                nombreInput.classList.remove('border-retroTerracotta');
+            }
+
+            // Validar Correo Electrónico (Regex simple)
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(correoInput.value.trim())) {
+                errorCorreo.classList.remove('hidden');
+                correoInput.classList.add('border-retroTerracotta');
+                isValid = false;
+            } else {
+                errorCorreo.classList.add('hidden');
+                correoInput.classList.remove('border-retroTerracotta');
+            }
+
+            // Validar Mensaje (mínimo 10 caracteres)
+            if (mensajeInput.value.trim().length < 10) {
+                errorMensaje.classList.remove('hidden');
+                mensajeInput.classList.add('border-retroTerracotta');
+                isValid = false;
+            } else {
+                errorMensaje.classList.add('hidden');
+                mensajeInput.classList.remove('border-retroTerracotta');
+            }
+
+            // Si pasa todas las validaciones
+            if (isValid) {
+                successAlert.classList.remove('hidden');
+                contactForm.reset();
+                // Ocultar alerta de éxito después de 6 segundos
+                setTimeout(() => {
+                    successAlert.classList.add('hidden');
+                }, 6000);
+            }
+        });
+    </script>
+</body>
+</html>

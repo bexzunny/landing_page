@@ -308,10 +308,12 @@ button, input, textarea {
 
 .tarjeta_servicio {
     display: flex;
-    flex: 1;
+
     flex-direction: column;
-    justify-content: space-between;
-    min-width: 0;
+    width: 30%;
+    padding: 28px;
+    box-sizing: border-box;
+
     padding: 28px;
     border: 2px solid var(--borde);
     border-radius: 12px;
@@ -690,7 +692,7 @@ button, input, textarea {
     }
 
     .tarjeta_servicio {
-        flex: 1 1 45%;
+        width: 45%;
     }
 
     .llamada_accion, .contacto_contenido {
